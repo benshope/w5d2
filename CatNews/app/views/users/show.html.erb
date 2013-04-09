@@ -1,0 +1,18 @@
+<h1>User</h1>
+<ul>
+  <li>Name: <%= @user.name %></li>
+  <li>Password: <%= @user.password %></li>
+  <li>Karma: <%= @user.karma %></li>
+  <li>Email(s):
+    <ul>
+      <% @user.emails.each do |email| %>
+        <% unless email.address.empty? %>
+          <li><%= email.address %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </li>
+</ul>
+<%= link_to "Edit User", edit_user_path(@user) %>
+<br>
+<%= link_to "All Users", users_path %>

@@ -1,0 +1,10 @@
+<h1>Post</h1>
+<ul>
+  <li><%= @post.link %></li>
+  <li><% @post.comments.each do |comment| %>
+    <li><%= comment.body %><li>
+      <%end%>
+</ul>
+<%= link_to "Delete Post", post_path(@post), method: :delete%>
+<!-- #show comments -->
+

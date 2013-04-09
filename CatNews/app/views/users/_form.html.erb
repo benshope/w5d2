@@ -1,0 +1,15 @@
+<%= form_for(@user) do |f| %>
+<%= f.label :name %><br>
+<%= f.text_field :name %><br>
+<%= f.label :password %><br>
+<%= f.password_field :password %><br>
+<%= f.fields_for(:emails) do |email_form| %>
+  <%= email_form.label :address, "Email" %><br>
+  <%= email_form.text_field :address %><br>
+<% end %>
+
+
+<%= f.hidden_field :karma, value: 0 %>
+<%= f.submit %>
+<% end %>
+<%= link_to "All Users", users_path %>
