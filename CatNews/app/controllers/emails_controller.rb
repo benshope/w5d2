@@ -1,5 +1,5 @@
 class EmailsController < ApplicationController
-  def index
+  def index #REV: do you need all of these?
   end
 
   def show
