@@ -33,7 +33,7 @@ class Comment < ActiveRecord::Base
 
   before_create :add_ancestors
 
-  def add_ancestors
+  def add_ancestors #rev: cool!
     unless parent.nil?
       ancestors << parent
       parent.ancestors.each do |ancestor|
