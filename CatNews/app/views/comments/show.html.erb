@@ -2,8 +2,9 @@
 <ul>
   <li>Body:  <%= @comment.body %></li>
   <ul><% @comment.descendants.each do |desc| %>
-    <!-- <li><%= desc.body %></li> -->
-    <%= render partial: :descendant, :desc = desc %>
+    <!-- <li><%= desc.body %></li> --> <!--#REV: when you comment stuff out like this, it still gets evaluated by ruby -->
+    <!-- instead, put a # in the erb tag like this... "<%= ... %>" => "<%#= ... %>" -->
+  <%= render partial: :descendant, :desc = desc %>
     <%end%>
   </ul>
 </ul>
