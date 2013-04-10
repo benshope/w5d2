@@ -83,4 +83,4 @@ ActiveRecord::Schema.define(:version => 20130409212042) do
     t.string   "remember_token"
   end
 
-end
+end#REV: looks good!
