@@ -19,6 +19,12 @@ class UsersController < ApplicationController
       log_in(@user.name, @user.password)
       redirect_to user_path(@user)
     else
+      #REV: Say a user enters an email but no comment body and hits submit.
+      #REV: you will re render the :new template, and ask again for the comment.
+      #REV: however when you re-render, you will lose the other two blank email fields.
+      #REV: So you need to do something before you re-render (to put them back in) like this: 
+      #REV: (3-@user.emails.count).times { @user.emails.build }
+      #REV: try it with yours if you don't understand...
       render :new
     end
   end
