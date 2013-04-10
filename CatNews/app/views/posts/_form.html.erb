@@ -1,6 +1,6 @@
 <%= form_for(@post) do |f| %>
 <%= f.label :link %><br>
-<%= f.text_field :link %><br>
+<%= f.text_field :link, :value => "http://" %><br>
 <%= f.fields_for(:comments) do |comment_form| %>
   <%= comment_form.label :body, "First Comment:"%><br>
   <%= comment_form.text_area :body %><br>

@@ -1,9 +1,13 @@
 <h1>Post</h1>
 <ul>
-  <li><%= @post.link %></li>
-  <li><% @post.comments.each do |comment| %>
-    <li><%= comment.body %><li>
+  <li>Link:  <%= link_to @post.link, @post.link %></li>
+  <li>Comments:
+    <ul>
+      <% @post.comments.each do |comment| %>
+        <li><%= comment.body %><% button_to "Upvote", %><li>
       <%end%>
+    </ul>
+
 </ul>
 <%= link_to "Delete Post", post_path(@post), method: :delete%>
 <!-- #show comments -->

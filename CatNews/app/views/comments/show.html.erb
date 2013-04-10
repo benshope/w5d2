@@ -1,2 +1,13 @@
-<h1>Comments#show</h1>
-<p>Find me in app/views/comments/show.html.erb</p>
+<h1>Comment</h1>
+<ul>
+  <li>Body:  <%= @comment.body %></li>
+  <ul><% @comment.descendants.each do |desc| %>
+    <!-- <li><%= desc.body %></li> -->
+    <%= render partial: :descendant, :desc = desc %>
+    <%end%>
+  </ul>
+</ul>
+<!-- if user owns comment -->
+<%= link_to "Delete Comment", comment_path(@comment), method: :delete%>
+<!-- #show comments -->
+

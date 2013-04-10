@@ -11,7 +11,9 @@
 
 class Postvote < ActiveRecord::Base
   attr_accessible :user_id, :post_id
-
+  validates :user_id, uniqueness: { scope: :post_id }
   belongs_to :user
   belongs_to :post
+
+  # before this saves, make sure user+post are unique
 end

@@ -41,4 +41,10 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to root_path
   end
+
+  def increment_karma
+    @user = User.find_by_id[:id]
+    @user.karma += 1
+    @user.save
+  end
 end
