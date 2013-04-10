@@ -31,6 +31,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find_by_id(params[:id])
     if @post.update_attributes(params[:post])
+    #REV: You can cut this down to just 'redirect_to @post'
       redirect_to user_path(@post)
     else
       render :edit
