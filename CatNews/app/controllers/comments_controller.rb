@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @comment = Comment.new
+    @comment = Comment.new #REV: not clear what you're doing here. doesn't a post have comments?
     @comment.comments.build
     @user = current_user
   end
