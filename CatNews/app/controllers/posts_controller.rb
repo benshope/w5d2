@@ -9,8 +9,8 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @post.comments.build
-    @user = current_user
+    @post.comments.build #REV: so you build comments for comment and post? (RE: my comment on  your post controller.)
+    @user = current_user #REV: I see how this works, but think it should be one way OR the other.
   end
 
   def create
