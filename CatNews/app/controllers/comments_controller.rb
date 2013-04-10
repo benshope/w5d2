@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
   end
 
   def create
+    #REV Try current_user.comments.build(params...) instead
     @comment = Comment.new(params[:comment])
     @comment.user = current_user
 
