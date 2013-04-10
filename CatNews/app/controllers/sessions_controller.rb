@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def create
-    if log_in(params[:session][:name], params[:session][:password])
+    if log_in(params[:session][:name], params[:session][:password]) #REV: I'm lovin' it. (R)
       redirect_to root_url
     else
       render :new
